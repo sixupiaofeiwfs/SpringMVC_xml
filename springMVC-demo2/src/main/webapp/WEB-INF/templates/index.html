@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/testValue                }">测试value1</a><br>
+<a th:href="@{/testvalue}">测试value2</a><br>
+<a th:href="@{/testMethod}">测试method</a><br>
+<form th:action="@{/testMethod}" method="post">
+    用户名：<input th:type="test">
+    密码：<input th:type="password">
+    提交：<input th:type="submit">
+</form>
+
+<a th:href="@{/testParam(username,passwor)}">测试param</a><br>
+<a th:href="@{/testParam(username='123456',password='adminadmin')}">测试param</a><br>
+<a th:href="@{/testHeader}">测试Header</a><br>
+<a th:href="@{/testAnt/aaa}">测试Ant?1</a><br>
+<a th:href="@{/testAnt/aaaa}">测试Ant?2</a><br>
+
+<a th:href="@{/testRest/1/wfs}">测试Rest</a><br>
+
+<a th:href="@{/testServletGetParam(username='123456',password='adminadmin')}">测试servlet方式获取请求参数</a><br>
+<a th:href="@{/testControllerGetParam(username='123456',password='adminadmin')}">测试形参方式获取请求参数</a><br>
+
+
+<a th:href="@{/testRequestParam(username='123456',password='adminadmin')}">测试@RequestParam的三个属性</a><br>
+
+
+
+<form th:action="@{/testStudent}" method="post">
+    姓名：<input th:type="text" name="name">
+    年龄：<input th:type="number" name="age">
+    电话：<input th:type="text" name="tel">
+    <input th:type="submit" th:value="提交">
+</form>
+
+
+<a th:href="@{/getScopeByServlet}">测试通过servlet的方式向request域对象共享数据</a><br>
+
+<a th:href="@{/getScopeByModelAndView}">测试通过modelAndView的方式向request域对象共享数据</a><br>
+<a th:href="@{/getScopeByModel}">测试通过model的方式向request域对象共享数据</a><br>
+<a th:href="@{/getScopeByMap}">测试通过map的方式向request域对象共享数据</a><br>
+<a th:href="@{/getScopeByModelMap}">测试通过modelMap的方式向request域对象共享数据</a><br>
+
+
+<a th:href="@{/setSessionByServletAPI}">测试通过modelMap的方式向session域共享对象</a><br>
+<a th:href="@{/setApplicationByServletApi}">测试通过servletAPI的方式向application域共享对象</a><br>
+
+
+
+<a th:href="@{/testRedirect}">测试重定向</a><br>
+
+
+<a th:href="@{/student}">学生数据</a><br>
+
+<a th:href="@{/testRequestBody}">testRequestBody</a><br>
+<a th:href="@{/testRequestEntity}">testRequestEntity</a><br>
+
+<a th:href="@{/testResponseBody}">testResponseBody</a><br>
+<a th:href="@{/testResponseByServletApi}">testResponseByServletApi</a><br>
+
+<a th:href="@{/testResponseByJson}">testResponseByJson</a><br>
+
+<a th:href="@{/testDown}">测试下载</a><br>
+
+
+
+<form th:action="@{/testUp}" method="post" enctype="multipart/form-data">
+    图片：<input th:type="file" name="photo"><br>
+    <input th:type="submit" th:value="上传">
+
+</form>
+
+<a th:href="@{/testInterceptor}">测试拦截器</a><br>
+
+<a th:href="@{/testException}">测试异常处理拦截器</a><br>
+</body>
+</html>
